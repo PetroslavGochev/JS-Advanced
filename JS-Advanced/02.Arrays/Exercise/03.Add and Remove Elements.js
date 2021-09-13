@@ -18,10 +18,12 @@ function addAndRemove(array) {
     }
 }
 
-addAndRemove(
-    ['add',
-        'add',
-        'remove',
-        'add',
-        'add']
-);
+console.log({test: addAndRemove(['add',
+'add',
+'remove',
+'add',
+'add']), test2: addAndRemove(['add',
+'add',
+'remove',
+'add',
+'add'])});

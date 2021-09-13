@@ -1,6 +1,6 @@
 function rotateArray(array, count) {
     for (let index = 1; index <= count; index++) {
-        array.push(array.splice(0, 1));
+        array.unshift(array.pop());
     }
     console.log(array.join(" "));
 }
