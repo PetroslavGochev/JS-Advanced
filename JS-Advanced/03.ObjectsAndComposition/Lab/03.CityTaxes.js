@@ -3,9 +3,9 @@ function cityTaxes(name, population, treasury){
         name,
         population,
         treasury,
-        taxtRate: 10,
+        taxRate: 10,
         collectTaxes() {
-            this.treasury += this.population * this.taxtRate;
+            this.treasury += this.population * this.taxRate;
         },
         applyGrowth(percentage) {
              this.population += Math.floor(this.population * percentage / 100);
