@@ -17,7 +17,7 @@ function lowestPriceInCities(array){
         }
         else {
             result[product] = {};
-            result[product].price = price;
+            result[product].price  = price;
             result[product].town = town;
         }
     }
