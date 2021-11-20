@@ -39,6 +39,28 @@ function solve() {
   }
 
   function buy(event){
+    let products = Array.from(document.querySelectorAll('tr'));
+    let bought = {
+      name: [],
+      totalSum: 0,
+      decFactor: [],
+      avgDecFactor: 0
+    }
+    for (let index = 1; index < products.length; index++) {
+      let isChecked = products[index].querySelector('input').checked
+      if(isChecked){
+        let product = Array.from(products[index].querySelectorAll('td'));
+          bought.name.push(product[1].innerText);
+          bought.totalSum += Number(product[2].innerText);
+          bought.decFactor.push(Number(product[3].innerText));
+      }
+    }
+      bought.avgDecFactor = (bought.decFactor.reduce((a, b) => a + b, 0) / bought.decFactor.length);
 
+      
+      let result = `Bought furniture: ${bought.name.join(', ')}\nTotal price: ${bought.totalSum.toFixed(2)}\nAverage decoration factor: ${bought.avgDecFactor}`
+      // result += `Total price: ${bought.totalSum.toFixed(2)}\n `;
+      // result += `Average decoration factor: ${bought.avgDecFactor}`;
+      document.querySelectorAll('textarea')[1].innerText = result;
   }
 }
